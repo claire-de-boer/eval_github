@@ -5,17 +5,11 @@ EQUIPE : 6 DEVELOPPEURS
 
 # --- PERSONNE 2 : feature activation function ---
 def hs(x):
-    """
-    TODO: Retourner 1 si x > 0, sinon 0.
-    """
-    pass
+   return 1 if x>0 else 0
+   
 
 def relu(x):
-    """
-    TODO: Retourner x si x > 0, sinon 0.
-    """
-    pass
-
+   return x if x>0 else 0 
 
 # --- PERSONNE 1 : feature input ---
 def get_data(filename):
@@ -24,6 +18,22 @@ def get_data(filename):
     Retourner une liste de points [[x1, x2], ...] et une liste de labels [y, ...].
     """
     pass
+
+
+# --- PERSONNE 1 : feature input ---
+def get_data(filename):
+    points = []
+    labels = []
+    with open(filename, 'r') as f: 
+        for line in f:
+            values = line.strip().split()
+            x1 = int(values[0])
+            x2 = int(values[1])
+            y = int(values[2])
+            points.append([x1, x2])
+            labels.append(y)
+    return points, labels 
+    
 
 
 # --- PERSONNE 3 : feature prediction ---
